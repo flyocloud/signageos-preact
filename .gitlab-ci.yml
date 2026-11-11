@@ -1,0 +1,13 @@
+# Type check, tests and build with the old-browser compatibility check on every push.
+# Delete this file if the project lives on GitHub (see .github/workflows/ci.yml).
+verify:
+  image: node:24
+  cache:
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - .npm/
+  script:
+    - npm ci --cache .npm --prefer-offline
+    - npm run verify

@@ -1,0 +1,55 @@
+{
+  "name": "signageos-preact",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Flyo signageOS applet starter: Preact, Tailwind 3 and an ES5 build for old TV browsers",
+  "main": "dist/index.html",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=22.12"
+  },
+  "browserslist": [
+    "chrome >= 30"
+  ],
+  "scripts": {
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode production",
+    "postbuild": "node scripts/compat.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "verify": "npm run typecheck && npm test && npm run build",
+    "upload": "sos applet upload",
+    "release": "npm run verify && sos applet upload"
+  },
+  "dependencies": {
+    "@signageos/front-applet": "8.12.0",
+    "core-js": "3.51.0",
+    "preact": "10.29.8",
+    "whatwg-fetch": "3.6.20"
+  },
+  "devDependencies": {
+    "@babel/core": "7.29.13",
+    "@babel/plugin-transform-react-jsx": "7.29.7",
+    "@babel/preset-env": "7.29.7",
+    "@babel/preset-typescript": "7.29.7",
+    "@signageos/cli": "4.5.1",
+    "@signageos/front-display": "14.50.0",
+    "@signageos/webpack-plugin": "2.0.0",
+    "acorn": "8.19.0",
+    "autoprefixer": "10.6.2",
+    "babel-loader": "10.1.1",
+    "css-loader": "7.1.5",
+    "html-webpack-plugin": "5.6.8",
+    "postcss": "8.5.32",
+    "postcss-loader": "8.2.1",
+    "style-loader": "4.0.0",
+    "tailwindcss": "3.4.19",
+    "typescript": "5.9.3",
+    "vitest": "5.1.0",
+    "webpack": "5.112.2",
+    "webpack-cli": "6.0.1",
+    "webpack-dev-server": "5.2.7"
+  }
+}

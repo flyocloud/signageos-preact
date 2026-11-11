@@ -1,0 +1,3 @@
+{
+  "api": "https://api.flyo.cloud/integration/signageos/<integration-id>/<token>"
+}

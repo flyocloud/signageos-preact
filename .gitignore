@@ -1,0 +1,5 @@
+node_modules/
+dist/
+# local signageOS emulator config, holds the API URL with its token
+sos.config.local.json
+.DS_Store
